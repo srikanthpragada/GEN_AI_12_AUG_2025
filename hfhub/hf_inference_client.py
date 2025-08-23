@@ -9,4 +9,5 @@ messages = [
 ]
 
 response = client.chat_completion(messages)
+#print(response)
 print(response.choices[0].message.content)
