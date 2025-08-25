@@ -1,3 +1,5 @@
+# streamlit run sl_translate.py
+
 import streamlit as st
 from huggingface_hub import InferenceClient
 import keys
@@ -9,7 +11,7 @@ st.title("English to Hindi")
 text  = st.text_input("Enligsh Text", "" )
 if len(text) > 0:
     hindi = client.translation(text)
-    st.write(hindi.translation_text)
+    st.write(f"<h4>{hindi.translation_text}</h4>", unsafe_allow_html=True)
 
 
 
