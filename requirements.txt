@@ -18,6 +18,8 @@ langchain-openai
 streamlit
 pypdf
 sentence-transformers
+openai
+sentencepiece 
 
 
 
