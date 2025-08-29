@@ -4,7 +4,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-loader = PyPDFLoader(r"courses_offered.pdf")
+loader = PyPDFLoader(r"courses_offered.pdf", mode='page')
 docs = loader.load()
 print("Loaded documents", len(docs))
 
@@ -15,6 +15,7 @@ splitter = RecursiveCharacterTextSplitter(
 
 chunks = splitter.split_documents(docs)
 print("No. of chunks :", len(chunks))
+
 
 embeddings_model = HuggingFaceEmbeddings(
     model_name='sentence-transformers/all-MiniLM-L6-v2')
